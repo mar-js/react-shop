@@ -24,7 +24,7 @@ export interface IProduct {
   rating: number;
   stock: number;
   brand: string;
-  category: TCategories;
+  category: TCategories | string;
   thumbnail: string;
   images: string[];
 }
