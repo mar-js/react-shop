@@ -1,6 +1,5 @@
 import {
   IData,
-  IFilters,
   TCategories
 } from 'interfaces'
 
@@ -10,11 +9,11 @@ export const INITIAL_DATA: IData = {
   skip: null,
   limit: null
 }
-
+/*
 export const INITIAL_FILTERS: IFilters = {
   category: 'all',
   minPrice: 0
-}
+}*/
 
 export const CATEGORIES: TCategories[] = [
   'all',

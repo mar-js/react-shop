@@ -1,4 +1,4 @@
-import { useData } from 'hooks/use-data'
+import { useData } from 'hooks'
 import { Product } from '../product'
 
 export const Products: React.FC = () => {
