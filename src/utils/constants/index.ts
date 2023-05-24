@@ -1,8 +1,11 @@
 import {
+  ICarts,
   IData,
   IFilters,
   TCategories
 } from 'interfaces'
+
+export const INITIAL_CARTS: ICarts = { products: [] }
 
 export const INITIAL_DATA: IData = {
   products: [],
