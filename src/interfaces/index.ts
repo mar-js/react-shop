@@ -1,7 +1,14 @@
 export type TCategories = 'all' | 'home-decoration' | 'laptops' | 'smartphones' | 'fragrances' | 'skincare' | 'groceries'
 
-export interface IUseData {
+export interface IDataModel {
   data: IData;
+  filters: IFilters;
+  setFilters: React.Dispatch<React.SetStateAction<IFilters>>;
+}
+
+export interface IFilters {
+  minPrice: number;
+  category: TCategories;
 }
 
 export interface IData {
