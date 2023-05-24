@@ -2,7 +2,7 @@ import { useData } from 'contexts/data'
 import { Product } from '../product'
 
 export const Products: React.FC = () => {
-  const { products } = useData()
+  const { data: { products } } = useData()
 
   return (
     <ul className="grid grid-cols-auto gap-6">
