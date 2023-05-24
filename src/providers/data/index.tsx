@@ -22,7 +22,10 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const productsFilter = (): IProduct[] => {
     const DATA: IProduct[] = data.products.filter(product => (
-      product.price > filters.minPrice || product.category === filters.category
+      product.price >= filters.minPrice && (
+        filters.category === 'all' ||
+          product.category === filters.category
+      )
     ))
 
     return DATA
