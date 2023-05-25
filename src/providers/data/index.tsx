@@ -5,9 +5,15 @@ import {
 } from 'react'
 import { DataModel } from 'contexts/data'
 import DATA from 'mocks/index.json'
-import { INITIAL_DATA, INITIAL_FILTERS } from 'utils/constants'
 import {
+  INITIAL_CARTS,
+  INITIAL_DATA,
+  INITIAL_FILTERS
+} from 'utils/constants'
+import {
+  ICarts,
   IData,
+  IDataModel,
   IFilters,
   IProduct
 } from 'interfaces'
@@ -15,6 +21,7 @@ import {
 export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [ data, setData ] = useState<IData>(INITIAL_DATA)
   const [ filters, setFilters ] = useState<IFilters>(INITIAL_FILTERS)
+  const [ carts, setCarts ] = useState<ICarts>(INITIAL_CARTS)
 
   useEffect(() => (
     setData(DATA)
@@ -24,20 +31,34 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     const DATA: IProduct[] = data.products.filter(product => (
       product.price >= filters.minPrice && (
         filters.category === 'all' ||
-          product.category === filters.category
+        product.category === filters.category
       )
     ))
 
     return DATA
   }
 
-  const VALUE = {
+  const checkInCart = (product: IProduct) => carts.products.some(p => p.id === product.id)
+
+  const addProduct = (product: IProduct) => {
+    setCarts(prev => ({ products: [ ...prev.products, product ] }))
+  }
+
+  const removeProduct = (id: number) => {
+    setCarts(prev => ({ products: [ ...prev.products.filter(product => product.id !== id) ] }))
+  }
+
+  const VALUE: IDataModel = {
     data: {
       ...data,
       products: productsFilter() || data.products
     },
     filters,
-    setFilters
+    setFilters,
+    carts,
+    addProduct,
+    removeProduct,
+    checkInCart
   }
 
   return (
