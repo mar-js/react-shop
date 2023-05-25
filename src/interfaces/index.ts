@@ -4,6 +4,14 @@ export interface IDataModel {
   data: IData;
   filters: IFilters;
   setFilters: React.Dispatch<React.SetStateAction<IFilters>>;
+  carts: ICarts;
+  addProduct: (product: IProduct) => void;
+  checkInCart: (product: IProduct) => boolean;
+  removeProduct: (id: number) => void;
+}
+
+export interface ICarts {
+  products: IProduct[] | [];
 }
 
 export interface IFilters {
