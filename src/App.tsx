@@ -3,10 +3,11 @@ import {
   Main,
   Nav
 } from 'UI/layouts'
-import { Products } from 'UI/components'
+import { Cart, Products } from 'UI/components'
 
 export const App: React.FC = () => (
   <>
+    <Cart />
     <Header />
     <Nav />
     <Main>
