@@ -10,6 +10,7 @@ export interface IDataModel {
   removeProduct: (id: number) => void;
   showAside: boolean;
   handleShowAside: () => void;
+  clearCarts: () => void;
 }
 
 export interface ICarts {
