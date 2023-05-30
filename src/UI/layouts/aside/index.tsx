@@ -1,5 +1,5 @@
 import { useData } from 'contexts/data'
-import { Close } from 'UI/components'
+import { Close, ClearCarts } from 'UI/components'
 
 export const Aside: React.FC = () => {
   const { carts, showAside } = useData()
@@ -7,7 +7,10 @@ export const Aside: React.FC = () => {
   return (
     <aside className={ `${showAside ? 'flex' : 'hidden'} flex-col justify-center items-center pt-20 p-3 fixed top-0 right-0 bottom-0 w-96 border-l-2 bg-[#105eab]` }>
       <Close />
-      <div className="w-full h-full">
+      { carts.products.length > 0 && (
+        <ClearCarts />
+      ) }
+      <div className="w-full h-full mt-5">
         { carts.products.map(product => (
           <img
             key={ product.id }
