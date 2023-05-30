@@ -8,6 +8,8 @@ export interface IDataModel {
   addProduct: (product: IProduct) => void;
   checkInCart: (product: IProduct) => boolean;
   removeProduct: (id: number) => void;
+  showAside: boolean;
+  handleShowAside: () => void;
 }
 
 export interface ICarts {
