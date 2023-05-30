@@ -4,7 +4,10 @@ export { Products } from './products'
 export { Product } from './product'
 export { Cart } from './cart'
 export {
-  AddToCartIcon, CartIcon, ClearCartIcon, RemoveFromCartIcon
+  AddToCartIcon,
+  CartIcon,
+  ClearCartIcon,
+  RemoveFromCartIcon
 } from './icons'
 export { Close } from './close'
 export { ClearCarts } from './clear-carts'
