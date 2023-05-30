@@ -11,3 +11,4 @@ export {
 } from './icons'
 export { Close } from './close'
 export { ClearCarts } from './clear-carts'
+export { ButtonCart } from './button-cart'
