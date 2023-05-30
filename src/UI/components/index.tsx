@@ -7,3 +7,4 @@ export {
   AddToCartIcon, CartIcon, ClearCartIcon, RemoveFromCartIcon
 } from './icons'
 export { Close } from './close'
+export { ClearCarts } from './clear-carts'
