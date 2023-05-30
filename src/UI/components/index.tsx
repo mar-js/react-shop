@@ -6,3 +6,4 @@ export { Cart } from './cart'
 export {
   AddToCartIcon, CartIcon, ClearCartIcon, RemoveFromCartIcon
 } from './icons'
+export { Close } from './close'
