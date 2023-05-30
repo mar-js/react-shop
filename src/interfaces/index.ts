@@ -1,5 +1,9 @@
 export type TCategories = 'all' | 'home-decoration' | 'laptops' | 'smartphones' | 'fragrances' | 'skincare' | 'groceries'
 
+export interface IButtonCart {
+  product: IProduct;
+}
+
 export interface IDataModel {
   data: IData;
   filters: IFilters;
