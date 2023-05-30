@@ -1,4 +1,5 @@
 import {
+  Aside,
   Header,
   Main,
   Nav
@@ -7,9 +8,10 @@ import { Cart, Products } from 'UI/components'
 
 export const App: React.FC = () => (
   <>
-    <Cart />
     <Header />
     <Nav />
+    <Cart />
+    <Aside />
     <Main>
       <Products />
     </Main>
