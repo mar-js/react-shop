@@ -22,6 +22,7 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [ data, setData ] = useState<IData>(INITIAL_DATA)
   const [ filters, setFilters ] = useState<IFilters>(INITIAL_FILTERS)
   const [ carts, setCarts ] = useState<ICarts>(INITIAL_CARTS)
+  const [ showAside, setShowAside ] = useState<boolean>(false)
 
   useEffect(() => (
     setData(DATA)
@@ -48,6 +49,10 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setCarts(prev => ({ products: [ ...prev.products.filter(product => product.id !== id) ] }))
   }
 
+  const handleShowAside = () => {
+    setShowAside(prev => !prev)
+  }
+
   const VALUE: IDataModel = {
     data: {
       ...data,
@@ -58,7 +63,9 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     carts,
     addProduct,
     removeProduct,
-    checkInCart
+    checkInCart,
+    showAside,
+    handleShowAside
   }
 
   return (
