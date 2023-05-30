@@ -53,6 +53,10 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setShowAside(prev => !prev)
   }
 
+  const clearCarts = () => {
+    setCarts({ products: [] })
+  }
+
   const VALUE: IDataModel = {
     data: {
       ...data,
@@ -65,7 +69,8 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     removeProduct,
     checkInCart,
     showAside,
-    handleShowAside
+    handleShowAside,
+    clearCarts
   }
 
   return (
