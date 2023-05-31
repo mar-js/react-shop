@@ -15,6 +15,7 @@ export interface IDataModel {
   showAside: boolean;
   handleShowAside: () => void;
   clearCarts: () => void;
+  clearFilters: () => void;
 }
 
 export interface ICarts {
