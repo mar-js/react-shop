@@ -57,6 +57,13 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setCarts({ products: [] })
   }
 
+  const clearFilters = () => {
+    setFilters({
+      category: 'all',
+      minPrice: 0
+    })
+  }
+
   const VALUE: IDataModel = {
     data: {
       ...data,
@@ -70,7 +77,8 @@ export const DataProvider: React.FC<PropsWithChildren> = ({ children }) => {
     checkInCart,
     showAside,
     handleShowAside,
-    clearCarts
+    clearCarts,
+    clearFilters
   }
 
   return (
